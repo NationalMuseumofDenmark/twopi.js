@@ -142,10 +142,13 @@ if(!window.jQuery) {
 				var angle = 2 * Math.PI * (e.offsetX - width/2) / width;
 				showImage( $wrapper, angle);
 			}).on('touchmove', {$wrapper: $wrapper}, function(e) {
-		    var touch = e.touches[0];
+		    var touch = e.originalEvent.touches[0];
+		    console.log(touch);
 				var $wrapper = e.data.$wrapper;
 				var width = $wrapper.width();
-				var angle = 2 * Math.PI * (touch.offsetX - width/2) / width;
+				var left = $wrapper.offset().left;
+				var offsetLeft = touch.pageX - left;
+				var angle = 2 * Math.PI * (offsetLeft - width/2) / width;
 				showImage( $wrapper, angle);
 			});
 		}
