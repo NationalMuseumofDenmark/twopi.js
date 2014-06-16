@@ -35,6 +35,41 @@
 <a name="2%CF%80-twopijs" class="anchor" href="#2%CF%80-twopijs"><span class="octicon octicon-link"></span></a>2π twopi.js</h1>
 
 <p>A simple JavaScript library to interactively display 360 images of artefacts.</p>
+      <h2>An example</h2>
+      <img id="eskimo-outfit" src="http://samlinger.natmus.dk/CIP/preview/thumbnail/ES/53108/" />
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="https://rawgithub.com/NationalMuseumofDenmark/twopi.js/master/twopi.js"></script>
+      <script>
+      var base_url = "http://samlinger.natmus.dk/CIP/preview/thumbnail/";
+      $("#eskimo-outfit").twopi({
+        images: [
+          base_url + 'ES/53108/',
+          base_url + 'ES/53140/',
+          base_url + 'ES/53126/',
+          base_url + 'ES/53111/',
+          base_url + 'ES/53158/',
+          base_url + 'ES/53143/',
+          base_url + 'ES/53128/',
+          base_url + 'ES/53113/',
+          base_url + 'ES/53098/',
+          base_url + 'ES/53145/',
+          base_url + 'ES/53130/',
+          base_url + 'ES/53115/',
+          base_url + 'ES/53100/',
+          base_url + 'ES/53147/',
+          base_url + 'ES/53131/',
+          base_url + 'ES/53117/',
+          base_url + 'ES/53102/',
+          base_url + 'ES/53150/',
+          base_url + 'ES/53134/',
+          base_url + 'ES/53120/',
+          base_url + 'ES/53105/',
+          base_url + 'ES/53153/',
+          base_url + 'ES/53137/',
+          base_url + 'ES/53123/',
+        ]
+      });
+      </script>
       </section>
     </div>
 
