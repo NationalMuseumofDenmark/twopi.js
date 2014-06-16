@@ -1,4 +1,4 @@
-twopi.js
+2π twopi.js
 ========
 
 A simple JavaScript library to interactively display 360 images of artefacts.

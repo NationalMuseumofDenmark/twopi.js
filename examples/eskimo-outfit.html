@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Eskimo Outfit - twopi.js demo</title>
+		<meta name="description" content="This demo shows the twopi.js library in action.">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		#eskimo-outfit {
+			max-width: 100%;
+			max-height: 100%;
+		}
+		</style>
+	</head>
+	<body>
+
+		<p>This is the outfit of an eskimo.</p>
+		<img id="eskimo-outfit" src="http://samlinger.natmus.dk/CIP/preview/thumbnail/ES/53108/" />
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="../twopi.js"></script>
+		<script>
+		var base_url = "http://samlinger.natmus.dk/CIP/preview/thumbnail/";
+		/*
+		ES/53108
+		ES/53140
+		ES/53126
+		ES/53111
+		ES/53158
+		ES/53143
+		ES/53128
+		ES/53113
+		ES/53098
+		ES/53145
+		ES/53130
+		ES/53115
+		ES/53100
+		ES/53147
+		ES/53131
+		ES/53117
+		ES/53102
+		ES/53150
+		ES/53134
+		ES/53120
+		ES/53105
+		ES/53153
+		ES/53137
+		ES/53123
+		*/
+		$("#eskimo-outfit").twopi({
+			images: [
+				base_url + 'ES/53108/',
+				base_url + 'ES/53140/',
+				base_url + 'ES/53126/',
+				base_url + 'ES/53111/',
+				base_url + 'ES/53158/',
+				base_url + 'ES/53143/',
+				base_url + 'ES/53128/',
+				base_url + 'ES/53113/',
+				base_url + 'ES/53098/',
+				base_url + 'ES/53145/',
+				base_url + 'ES/53130/',
+				base_url + 'ES/53115/',
+				base_url + 'ES/53100/',
+				base_url + 'ES/53147/',
+				base_url + 'ES/53131/',
+				base_url + 'ES/53117/',
+				base_url + 'ES/53102/',
+				base_url + 'ES/53150/',
+				base_url + 'ES/53134/',
+				base_url + 'ES/53120/',
+				base_url + 'ES/53105/',
+				base_url + 'ES/53153/',
+				base_url + 'ES/53137/',
+				base_url + 'ES/53123/',
+			]
+		});
+		</script>
+	</body>
+</html>
