@@ -40,33 +40,36 @@
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       <script src="https://rawgithub.com/NationalMuseumofDenmark/twopi.js/master/twopi.js"></script>
       <script>
-      var base_url = "http://samlinger.natmus.dk/CIP/preview/thumbnail/";
+      function image_url( id ) {
+		//return "http://samlinger.natmus.dk/CIP/preview/image/ES/" + id + "?maxsize=500";
+        return "http://samlinger.natmus.dk/CIP/preview/thumbnail/ES/" + id;
+      }
       $("#eskimo-outfit").twopi({
         images: [
-          base_url + 'ES/53108/',
-          base_url + 'ES/53140/',
-          base_url + 'ES/53126/',
-          base_url + 'ES/53111/',
-          base_url + 'ES/53158/',
-          base_url + 'ES/53143/',
-          base_url + 'ES/53128/',
-          base_url + 'ES/53113/',
-          base_url + 'ES/53098/',
-          base_url + 'ES/53145/',
-          base_url + 'ES/53130/',
-          base_url + 'ES/53115/',
-          base_url + 'ES/53100/',
-          base_url + 'ES/53147/',
-          base_url + 'ES/53131/',
-          base_url + 'ES/53117/',
-          base_url + 'ES/53102/',
-          base_url + 'ES/53150/',
-          base_url + 'ES/53134/',
-          base_url + 'ES/53120/',
-          base_url + 'ES/53105/',
-          base_url + 'ES/53153/',
-          base_url + 'ES/53137/',
-          base_url + 'ES/53123/',
+          image_url( 53108 ),
+          image_url( 53140 ),
+          image_url( 53126 ),
+          image_url( 53111 ),
+          image_url( 53158 ),
+          image_url( 53143 ),
+          image_url( 53128 ),
+          image_url( 53113 ),
+          image_url( 53098 ),
+          image_url( 53145 ),
+          image_url( 53130 ),
+          image_url( 53115 ),
+          image_url( 53100 ),
+          image_url( 53147 ),
+          image_url( 53131 ),
+          image_url( 53117 ),
+          image_url( 53102 ),
+          image_url( 53150 ),
+          image_url( 53134 ),
+          image_url( 53120 ),
+          image_url( 53105 ),
+          image_url( 53153 ),
+          image_url( 53137 ),
+          image_url( 53123 )
         ]
       });
       </script>
