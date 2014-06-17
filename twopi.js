@@ -83,8 +83,8 @@ if(!window.jQuery) {
 				for( var i in imageSrcs ) {
 					var imageSrc = imageSrcs[i];
 					// var image = new Image();
-					var image = document.createElement("img");
-					$(image).on('load', { $this: $this, done_callback: done_callback }, function(e) {
+					var $image = $("<img>").appendTo($this);
+					$image.on('load', { $this: $this, done_callback: done_callback }, function(e) {
 						var $this = e.data.$this;
 						var images_count = $this.data('twopi-images').length;
 						var images_loaded = $this.data('twopi-images-loaded') + 1;
@@ -98,8 +98,8 @@ if(!window.jQuery) {
 							e.data.done_callback( $this );
 						}
 					});
-					image.src = imageSrc;
-					images[i] = image;
+					$image.attr('src', imageSrc).hide();
+					images[i] = $image;
 				}
 				$this.data('twopi-images', images);
 			}
@@ -124,11 +124,10 @@ if(!window.jQuery) {
 				var images = $this.data('twopi-images');
 				if($this.data('twopi-images-loaded') >= images.length) {
 					var image_index = fromAngleToIndex(images.length, angle);
-					var image = images[image_index];
-					// console.debug("The image from", angle, "radians, is indexed", image_index, image);
-					$('img', $this).replaceWith( image );
-					// console.log($('img', $this));
-					// $this.get(0).src = image.src;
+					var $image = images[image_index];
+					// Hide all images
+					$('img', $this).not($image).hide();
+					$image.show();
 				} else {
 					console.error("Please wait for all images to load.");
 				}
@@ -141,8 +140,8 @@ if(!window.jQuery) {
 					var angle = 2 * Math.PI * (e.offsetX - width/2) / width;
 					showImage( $wrapper, angle);
 				}).on('touchmove', {$wrapper: $wrapper}, function(e) {
-			    var touch = e.originalEvent.touches[0];
-			    console.log(touch);
+					e.preventDefault();
+      		var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
 					var $wrapper = e.data.$wrapper;
 					var width = $wrapper.width();
 					var left = $wrapper.offset().left;
@@ -157,7 +156,7 @@ if(!window.jQuery) {
 				// Replace this element with a wrapper.
 				var $wrapper = $("<div class='twopi-wrapper'>")
 					.css({
-						display: 'inline',
+						display: 'block',
 						width: $image.width(),
 						height: $image.height()
 					});
