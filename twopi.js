@@ -178,6 +178,9 @@ if(!window.jQuery) {
 					if(typeof(opts.loadedCallback) === 'function') {
 						opts.loadedCallback( $wrapper );
 					}
+					// TODO: Consider registering these events before the images are loaded,
+					// such that the images that are ready can be used and the missing images
+					// fails gracefully.
 					registerEventListeners($wrapper);
 				});
 			}).each(function() {
